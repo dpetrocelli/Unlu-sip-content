@@ -8,3 +8,13 @@
 # source "/home/david/.sdkman/bin/sdkman-init.sh"
 # sdk list java
 # sdk install java 11.0.12-open
+
+# Node manager
+# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+# export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"\n[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" 
+
+# locally installed 
+# nvm ls
+#   nvm ls-remote
+# nvm install v18.15.0 
+#  nvm use [VERSION]

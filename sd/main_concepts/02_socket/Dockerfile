@@ -1,5 +1,20 @@
+# tomar como base una imagen de Docker existente (ISO)
 FROM openjdk:latest
-COPY target/ex1-0.0.1-SNAPSHOT.jar /usr/src/ex1-0.0.1-SNAPSHOT.jar
+
+# Definir el directorio base de trabajo
 WORKDIR /usr/src/
-EXPOSE 9090
-ENTRYPOINT ["java", "-jar", "ex1-0.0.1-SNAPSHOT.jar"]
+
+# Copiar mi archivo .jar (de mi maq.) al contenedor 
+COPY target/my-app-1.0-SNAPSHOT.jar /usr/src/app.jar
+
+# Exponer el puerto que escucha la app (Servidor socket)
+EXPOSE 8080
+
+# Comando que corro al iniciar el contenedor
+ENTRYPOINT ["java", "-jar", "app.jar"]
+
+# COMPILACION ->  docker build . -t miprimerappjava
+
+# CORRIDA -> 
+# docker run --rm --name miprimercontenedorcorriendo -p 8080:8080 miprimerappjava   
+# docker run --rm --name misegundocontenedorcorriendo -p 8081:8080 miprimerappjava  
