@@ -47,8 +47,13 @@ jobs:
         working-directory: sip/oauth-demo/api_spring_java_hello-world
         run: |
           ls -lah 
-          ./gradlew build
-          java -jar build/libs/*.jar
+          echo branch_name: '${name}'
+          echo PORT: '${PORT}'
+          echo CLIENT_ORIGIN_URL: '${CLIENT_ORIGIN_URL}'
+          echo AUTH0_DOMAIN: '${AUTH0_DOMAIN}'
+        
+          #./gradlew build
+          #java -jar build/libs/*.jar
   # publish-npm:
   #   needs: build
   #   runs-on: ubuntu-latest
