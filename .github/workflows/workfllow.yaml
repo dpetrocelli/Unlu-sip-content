@@ -24,7 +24,7 @@ jobs:
     
     environment: 
       name: ${{ needs.setup-stage.outputs.env-name }}
-      
+
     env:
       # secrets -> https://github.com/dpetrocelli/unlu-content/settings/secrets/actions
       
@@ -56,8 +56,8 @@ jobs:
           echo CLIENT_ORIGIN_URL: '${CLIENT_ORIGIN_URL}'
           echo AUTH0_DOMAIN: '${AUTH0_DOMAIN}'
         
-          #./gradlew build
-          #java -jar build/libs/*.jar
+          ./gradlew build
+          java -jar build/libs/*.jar
   # publish-npm:
   #   needs: build
   #   runs-on: ubuntu-latest
