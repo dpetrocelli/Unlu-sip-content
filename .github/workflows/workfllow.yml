@@ -1,0 +1,47 @@
+name: SIP Pipeline
+
+on:
+  release:
+    types: [created,push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
+      - name: Run build with Gradle Wrapper
+        working-directory: sip/oauth-demo/api_spring_java_hello-world
+        run: ./gradlew build
+
+  # publish-npm:
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: actions/setup-node@v1
+  #       with:
+  #         node-version: 12
+  #         registry-url: https://registry.npmjs.org/
+  #     - run: npm ci
+  #     - run: npm build
+  #     - run: npm publish
+  #       env:
+  #         NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+
+
+  #   publish-gpr:
+  #       needs: build
+  #       runs-on: ubuntu-latest
+  #       steps:
+  #       - uses: actions/checkout@v2
+  #       - uses: actions/setup-node@v1
+  #           with:
+  #           node-version: 12
+  #           registry-url: https://npm.pkg.github.com/
+  #           scope: '@your-github-username'
+  #       - run: npm ci
+  #       - run: npm publish
+  #           env:
+  #           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
