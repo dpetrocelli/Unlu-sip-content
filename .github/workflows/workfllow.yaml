@@ -19,8 +19,12 @@ jobs:
 
   build:
     needs: [setup-stage] 
+    
     runs-on: ubuntu-latest
     
+    environment: 
+      name: ${{ needs.setup-stage.outputs.env-name }}
+      
     env:
       # secrets -> https://github.com/dpetrocelli/unlu-content/settings/secrets/actions
       
