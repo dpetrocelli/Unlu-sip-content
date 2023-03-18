@@ -5,16 +5,28 @@ on:
     branches:
       - main
 
+ 
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      EZORED_AWS_KEY_ID: ${{ env.EZORED_AWS_KEY_ID }}
+      EZORED_AWS_SECRET_KEY: ${{ env.EZORED_AWS_SECRET_KEY }}
+    
     steps:
-      - uses: actions/checkout@v2
+      # STEP 0 - Checkout code
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      # STEP 1 - Configure environment (JDK 17 + ?)
       - name: Set up JDK 17
         uses: actions/setup-java@v3
         with:
           java-version: '17'
           distribution: 'corretto'
+      
+      # STEP 2 - Build JAR based on env vars (taken from secrets) 
       - name: Run build with Gradle Wrapper
         working-directory: sip/oauth-demo/api_spring_java_hello-world
         run: |
