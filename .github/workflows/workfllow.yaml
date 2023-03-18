@@ -17,7 +17,9 @@ jobs:
           distribution: 'corretto'
       - name: Run build with Gradle Wrapper
         working-directory: sip/oauth-demo/api_spring_java_hello-world
-        run: echo "hello" ; ls -lah 
+        run: |
+          ls -lah 
+          ./gradlew bootjar
   # publish-npm:
   #   needs: build
   #   runs-on: ubuntu-latest
