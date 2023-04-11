@@ -16,7 +16,17 @@ spring:
       resourceserver:
         jwt:
           issuer-uri: https://${env.AUTH0_DOMAIN}/
+  datasource:
+    url: ${env.DB_URL}
+    username: ${env.DB_USER}
+    password: ${env.DB_PASSWORD}
+
+  flyway:
+    enabled: true
+    url: ${env.DB_URL}
+    user: ${env.DDL_USER}
+    password: ${env.DDL_PASSWORD}
+
   web:
     resources:
       add-mappings: false
-

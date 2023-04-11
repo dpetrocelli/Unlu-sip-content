@@ -8,10 +8,12 @@ import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 
 import io.github.cdimascio.dotenv.Dotenv;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Log4j2
 @SpringBootApplication
 @ConfigurationPropertiesScan
+@EnableJpaRepositories(basePackages = "com.example.helloworld")
 public class HelloWorldApplication {
 
   enum DotEnv {

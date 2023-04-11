@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgis/postgis:12-3.0
+    ports:
+      - "5430:5432"
+    volumes:
+      # create additional app user
+      - ./docker-compose/init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      POSTGRES_USER: "app-ddl"
+      POSTGRES_PASSWORD: "app-ddl"
+      POSTGRES_DB: "example"
