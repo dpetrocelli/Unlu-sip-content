@@ -37,13 +37,27 @@ jobs:
       # STEP 0 - Checkout code
       - name: Checkout code
         uses: actions/checkout@v3
-      
-      
+    
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
       # STEP 2 - Build JAR based on env vars (taken from secrets) 
       - name: Run ls command
         working-directory: sd/main_concepts/09_nodejs_pipeline
         run: |
           ls -lah
+          
+      - name: Run npm install commands
+        working-directory: sd/main_concepts/09_nodejs_pipeline
+        run: |
+          npm install
+          npm install dependency-check -g
+
+      - name: Run npm check dependencies
+        working-directory: sd/main_concepts/09_nodejs_pipeline
+        run: |
+          dependency-check ./package.json --verbose
           
   # publish-npm:
   #   needs: build
