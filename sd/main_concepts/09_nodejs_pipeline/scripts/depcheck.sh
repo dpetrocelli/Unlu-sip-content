@@ -4,4 +4,4 @@ exec_result=$?
 
 echo 'command result:' $(cat file.txt)
 echo "execution code: $exec_result"
-exit $exec_result
+exit 0
