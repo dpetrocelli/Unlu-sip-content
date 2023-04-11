@@ -1,3 +1,4 @@
+
 dependency-check ./package.json --verbose &> file.txt
 exec_result=$?
 

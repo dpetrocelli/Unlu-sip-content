@@ -57,7 +57,8 @@ jobs:
       - name: Run npm check dependencies
         working-directory: sd/main_concepts/09_nodejs_pipeline
         run: |
-          dependency-check ./package.json --verbose
+          #dependency-check ./package.json --verbose
+          bash ./scripts/depcheck.sh
           
   # publish-npm:
   #   needs: build
