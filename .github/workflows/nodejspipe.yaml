@@ -54,10 +54,10 @@ jobs:
           npm install
           npm install dependency-check -g
 
-      - name: Run npm outdated
-        working-directory: sd/main_concepts/09_nodejs_pipeline
-        run: |
-          npm outdated
+      # - name: Run npm outdated
+      #   working-directory: sd/main_concepts/09_nodejs_pipeline
+      #   run: |
+      #     npm outdated
 
       - name: Run npm check dependencies
         working-directory: sd/main_concepts/09_nodejs_pipeline
