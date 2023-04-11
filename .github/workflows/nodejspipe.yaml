@@ -93,7 +93,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          file: ./Dockerfile
+          file: sd/main_concepts/09_nodejs_pipeline/Dockerfile
           push: false
           tags: dpetrocelli/clockbox:latest
       
