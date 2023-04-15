@@ -7,7 +7,7 @@ metadata:
   labels:
     app: postgres # Defines app to create service for
 spec:
-  type: LoadBalancer # Sets the service type
+  type: ClusterIP # Sets the service type
   ports:
   - name: tcp
     port: 5432
@@ -17,8 +17,3 @@ spec:
     app: postgres
 
 
-
-  POSTGRES_DB: appdb
-  POSTGRES_USER: appuser
-  POSTGRES_PASSWORD: strongpasswordapp
-  postgres-dpetrocelli.cloud.okteto.net
