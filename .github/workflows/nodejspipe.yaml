@@ -94,7 +94,7 @@ jobs:
         with:
           context: sd/main_concepts/09_nodejs_pipeline
           file: sd/main_concepts/09_nodejs_pipeline/Dockerfile
-          push: false
+          push: true
           tags: dpetrocelli/clockbox:latest
       
       - name: Run docker image
