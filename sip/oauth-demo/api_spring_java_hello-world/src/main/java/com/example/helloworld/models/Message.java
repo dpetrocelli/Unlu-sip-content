@@ -8,13 +8,14 @@ import javax.persistence.Id;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
 @Entity
 @Data
+@NoArgsConstructor
 public class Message {
-
   @Id
   @Column(name = "id", nullable = false)
   private UUID id;
