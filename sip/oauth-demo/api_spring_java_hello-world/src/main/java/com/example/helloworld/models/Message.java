@@ -16,7 +16,6 @@ import org.springframework.data.annotation.LastModifiedDate;
 @Data
 @NoArgsConstructor
 public class Message {
-
   @Id
   @Column(name = "id", nullable = false)
   private UUID id;
