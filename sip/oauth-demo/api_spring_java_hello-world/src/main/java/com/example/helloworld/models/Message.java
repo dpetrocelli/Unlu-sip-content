@@ -20,6 +20,8 @@ public class Message {
   @Column(name = "id", nullable = false)
   private UUID id;
 
+
+  @Column
   private String content;
 
   @CreatedDate
