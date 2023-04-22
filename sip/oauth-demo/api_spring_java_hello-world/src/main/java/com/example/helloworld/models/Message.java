@@ -21,7 +21,6 @@ public class Message {
   private UUID id;
 
   private String content;
-
   @CreatedDate
   @Column(name = "created_date")
   private LocalDateTime createdDate;
