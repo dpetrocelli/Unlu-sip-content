@@ -1,0 +1,22 @@
+services:
+  rabbitmq:
+    image: rabbitmq:management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+
+# If you wish to change the default username and password of guest / guest
+#  -e RABBITMQ_DEFAULT_USER=user -e RABBITMQ_DEFAULT_PASS=password
+# rabbit_user=$1
+# rabbit_pwd=$2
+# amqp_mapped_port=$3
+# web_mapped_port=$4
+# docker run --restart=never \
+# -d \
+# -e RABBITMQ_NODENAME=rabbitmq \
+# -e RABBITMQ_DEFAULT_USER=$rabbit_user \
+# -e RABBITMQ_DEFAULT_PASS=$rabbit_pwd \
+# -p $amqp_mapped_port:5672 \
+# -p $web_mapped_port:15672 \
+# --rm --name rabbitmq rabbitmq:management
