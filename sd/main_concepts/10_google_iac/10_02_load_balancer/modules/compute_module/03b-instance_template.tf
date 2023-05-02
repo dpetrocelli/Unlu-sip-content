@@ -20,7 +20,7 @@ resource "google_compute_instance_template" "instance_template" {
   instance_description    = var.instance_name
   machine_type            = var.instance_type
   can_ip_forward          = false
-  metadata_startup_script = "${file("${path.module}/scripts/script.sh")}"
+  #metadata_startup_script = "${file("${path.module}/scripts/script.sh")}"
 
   scheduling {
     automatic_restart   = true
@@ -30,7 +30,7 @@ resource "google_compute_instance_template" "instance_template" {
   }
 
   disk {
-    source_image = data.google_compute_image.debian_image.self_link
+    source_image = data.google_compute_image.my_debian_image.self_link
     boot         = true
     disk_type    = "pd-balanced"
   }
@@ -38,9 +38,9 @@ resource "google_compute_instance_template" "instance_template" {
   network_interface {
     network    = var.network
     #network = "default"
-    access_config { 
+    /* access_config { 
       // Ephemeral public IP
-    }
+    } */
     #subnetwork = data.google_compute_subnetwork.subnet.name
   }
 
