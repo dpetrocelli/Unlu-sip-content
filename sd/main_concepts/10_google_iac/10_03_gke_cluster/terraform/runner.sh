@@ -13,9 +13,9 @@ else
 fi
 
 
-filepath=$(dirname $(pwd))/10_00_credentials/terraform.json
+filepath=/home/david/Documents/GitHub/unlu/unlu-content/sd/main_concepts/10_google_iac/10_00_credentials/terraform.json
 bucket_name="unlu-tf-state"
-prefix="terraform/state"
+prefix="gke/state"
 
 terraform init --reconfigure --var credentials_file_path=$filepath \
     --backend-config bucket=$bucket_name \
@@ -24,9 +24,9 @@ terraform init --reconfigure --var credentials_file_path=$filepath \
 
 terraform validate 
 
-#terraform plan --var credentials_file_path=$filepath --var privatekeypath="~/.ssh/gcp" --var publickeypath="~/.ssh/gcp.pub" --var instance_count="2"
+#terraform plan --var credentials_file_path=$filepath
 
-#terraform apply --auto-approve  --var credentials_file_path=$filepath --var privatekeypath="~/.ssh/gcp" --var publickeypath="~/.ssh/gcp.pub" --var instance_count="1"
+#terraform apply --auto-approve  --var credentials_file_path=$filepath 
 
-terraform destroy --auto-approve  --var credentials_file_path=$filepath --var privatekeypath="~/.ssh/gcp" --var publickeypath="~/.ssh/gcp.pub"
+terraform destroy --auto-approve  --var credentials_file_path=$filepath
 

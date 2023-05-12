@@ -36,8 +36,8 @@ resource "google_compute_instance_template" "instance_template" {
   }
 
   network_interface {
-    network    = var.network
-    #network = "default"
+    #network    = var.network
+    network = "default"
     /* access_config { 
       // Ephemeral public IP
     } */

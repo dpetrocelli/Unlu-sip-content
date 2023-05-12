@@ -52,11 +52,13 @@ variable "instance_count" {
 variable "privatekeypath" {
     type = string
     default = "~/.ssh/id_rsa"
+    sensitive   = true
 }
 
 variable "publickeypath" {
     type = string
     default = "~/.ssh/id_rsa.pub"
+    sensitive   = true
 }
 
 variable "user" {

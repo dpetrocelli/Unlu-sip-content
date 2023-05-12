@@ -26,7 +26,7 @@ terraform validate
 
 #terraform plan --var credentials_file_path=$filepath --var privatekeypath="~/.ssh/gcp" --var publickeypath="~/.ssh/gcp.pub"
 
-terraform apply --auto-approve  --var credentials_file_path=$filepath --var privatekeypath="~/.ssh/gcp" --var publickeypath="~/.ssh/gcp.pub"
+#terraform apply --auto-approve  --var credentials_file_path=$filepath --var privatekeypath="~/.ssh/gcp" --var publickeypath="~/.ssh/gcp.pub"
 
-#terraform destroy --auto-approve  --var credentials_file_path=$filepath --var privatekeypath="~/.ssh/gcp" --var publickeypath="~/.ssh/gcp.pub"
+terraform destroy --auto-approve  --var credentials_file_path=$filepath --var privatekeypath="~/.ssh/gcp" --var publickeypath="~/.ssh/gcp.pub"
 

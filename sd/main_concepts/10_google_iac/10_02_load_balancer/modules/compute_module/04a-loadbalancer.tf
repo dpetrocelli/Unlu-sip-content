@@ -8,7 +8,7 @@ resource "google_compute_url_map" "http" {
   default_url_redirect {
     redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
     strip_query            = false
-    https_redirect         = true
+    https_redirect         = false
   }
 }
 
