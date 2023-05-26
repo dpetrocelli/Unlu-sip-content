@@ -14,4 +14,5 @@ buildNumber.properties
 .history/**
 sd/main_concepts/09_nodejs_pipeline/node_modules/**
 sd/main_concepts/10_google_iac/10_00_credentials/**
+sd/main_concepts/10_google_iac/10_03_gke_cluster/k8s/**
 **.terraform**

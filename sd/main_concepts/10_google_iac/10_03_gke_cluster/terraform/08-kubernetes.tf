@@ -30,6 +30,7 @@ resource "google_container_cluster" "primary" {
   # rapid antes
   # regular normal
   # stable cuando está re estable
+  # manual 
 
   workload_identity_config {
     workload_pool = "${var.project_id}.svc.id.goog"
