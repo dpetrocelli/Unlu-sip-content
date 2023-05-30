@@ -16,7 +16,7 @@ jobs:
         id: env-name
         run: echo "env=${{ github.ref_name }}" >> $GITHUB_OUTPUT
 
-  dependencies:
+  TFInstall:
     needs: [setup-stage] 
     
     runs-on: ubuntu-latest
@@ -46,14 +46,14 @@ jobs:
       # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
       - name: Terraform Init
         working-directory: sd/main_concepts/10_google_iac/10_03_gke_cluster/terraform
-        run: echo "ls"
+        run: ls -lah
         env:
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
 
-      # STEP 2 - Build JAR based on env vars (taken from secrets) 
-      - name: Run ls command
-        working-directory: sd/main_concepts/09_nodejs_pipeline
-        run: |
-          ls -lah
+      # # STEP 2 - Build JAR based on env vars (taken from secrets) 
+      # - name: Run ls command
+      #   working-directory: sd/main_concepts/09_nodejs_pipeline
+      #   run: |
+      #     ls -lah
           
     
