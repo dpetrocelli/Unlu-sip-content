@@ -58,7 +58,7 @@ jobs:
 
           terraform validate 
 
-          terraform plan
+          terraform plan -lock=false
 
         env:
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
