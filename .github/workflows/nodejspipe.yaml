@@ -52,13 +52,13 @@ jobs:
           bucket_name="unlu-tf-state"
           prefix="gke/state"
           
-          terraform init --reconfigure \
+          terraform init \
           --backend-config bucket=$bucket_name \
           --backend-config prefix=$prefix 
 
-          terraform validate 
+          #terraform validate 
 
-          terraform plan -lock=false
+          #terraform plan -lock=false
 
           terraform apply -lock=false --auto-approve
         env:
