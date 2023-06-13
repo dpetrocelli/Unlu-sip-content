@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  replicas: 1 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - command:
+        - /bin/sh
+        - -c
+        - sleep 6000
+        name: nginx
+        image: dencold/pgcli
+        ports:
+        - containerPort: 80
