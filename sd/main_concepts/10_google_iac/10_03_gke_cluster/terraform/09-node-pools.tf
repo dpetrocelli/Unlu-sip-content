@@ -7,7 +7,7 @@ resource "google_service_account" "kubernetes" {
 resource "google_container_node_pool" "general" {
   name       = "general"
   cluster    = google_container_cluster.primary.id
-  node_count = 1
+  node_count = 0
 
   management {
     auto_repair  = true
@@ -15,7 +15,7 @@ resource "google_container_node_pool" "general" {
   }
 
   autoscaling {
-    min_node_count = 1
+    min_node_count = 0
     max_node_count = 10
   }
 
@@ -37,7 +37,7 @@ resource "google_container_node_pool" "general" {
 resource "google_container_node_pool" "spot" {
   name    = "spot"
   cluster = google_container_cluster.primary.id
-  node_count = 1
+  node_count = 2
 
   management {
     auto_repair  = true
@@ -45,13 +45,13 @@ resource "google_container_node_pool" "spot" {
   }
 
   autoscaling {
-    min_node_count = 1
+    min_node_count = 2
     max_node_count = 10
   }
 
   node_config {
     preemptible  = true
-    machine_type = "e2-small"
+    machine_type = "e2-highcpu-4"
 
     labels = {
       team = "devops"
