@@ -11,7 +11,7 @@
 | Share data between modules              | ■■□□□      | ■■□□□    | ■■■■■      |
 | Work with multiple modules concurrently | □□□□□      | □□□□□    | ■■■■■      |
 | No extra tooling to learn or use        | ■■■■■      | ■■■■■    | □□□□□      |
-| Works with Terraform Cloud              | ■■■■■      | ■■■■■    | ■□□□□      |
+| Works with Terraform Cloud              | ■■■■■      | xxxxo    | oooox      |
 
 Terragrunt
 https://terragrunt.gruntwork.io/docs/getting-started/quick-start/

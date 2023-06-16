@@ -6,9 +6,11 @@ account. For this, you create a service account and download a key file
 
 gcloud projects list
 gcloud config set project sd-2023-384422
+
 gcloud iam service-accounts create terraform \
  --description="Terraform Service Account" \
  --display-name="terraform"
+ 
 export GOOGLE_SERVICE_ACCOUNT=`gcloud iam service-accounts \
  list --format="value(email)" --filter=name:"terraform@"`
 export GOOGLE_CLOUD_PROJECT=`gcloud info \
