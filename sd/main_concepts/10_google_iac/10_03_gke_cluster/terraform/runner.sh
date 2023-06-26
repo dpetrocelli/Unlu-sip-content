@@ -26,7 +26,6 @@ terraform validate
 
 #terraform plan --var credentials_file_path=$filepath
 
-
 #terraform apply --auto-approve  --var credentials_file_path=$filepath -lock=false
 
 terraform destroy --auto-approve  --var credentials_file_path=$filepath -lock=false
